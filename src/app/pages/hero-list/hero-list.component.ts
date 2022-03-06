@@ -21,25 +21,32 @@ export class HeroListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getHomeHeroes()
-    this.route.params.subscribe((params) => {
-      const heroName = params["hero"];
-      this.heroService.getHeroByName(heroName).subscribe((hero) => {
-        this.heroSlice = hero
-      });
-    });
+    this.getHeroes()
+
   }
 
-  public getHomeHeroes() {
-    this.heroService.getAllHeroes().subscribe((heroes) => {
-      this.allHeroes = heroes
-      this.heroSlice = this.allHeroes.slice(0, 4)
-    })
+  public getHeroes() {
+    this.route.params.subscribe((params) => {
+      const heroName = params["hero"];
+      if(heroName) {
+        this.heroService.getHeroByName(heroName).subscribe((hero) => {
+          this.heroSlice = hero
+        });
+      } else {
+        this.heroService.getAllHeroes().subscribe((heroes) => {
+          this.allHeroes = heroes
+          this.heroSlice = this.allHeroes.slice(0, 4)
+        })
+      }
+
+    });
+
+
   }
 
   public deleteHeroInParent(id: string) {
     this.heroService.deleteHero(id).subscribe(() => {
-      this.getHomeHeroes();
+      this.getHeroes();
     });
   }
 
