@@ -1,27 +1,17 @@
-# HeroesApp
+**HEROES APP**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
+ - Angular 12
+ - Server: json-server or mockapi.io ( in enviromet.ts ) you can set the url of api you want to use
 
-## Development server
+**TO MAKE THE APP WORK**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Start mock server (json server) with command: npm run server
+2. Start Angular app with command: ng serve
 
-## Code scaffolding
+**PLAY WITH THE APP**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. If you click in a hero that will open a modal with hero details.
+2. You can create new heroes in the 'ADD NEW HEROES' option in header navigation.
+3. You can edit heroes by clicking on edit button of every hero.
+4. You can delete heroes by clicking on remove button of every hero.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
