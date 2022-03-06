@@ -14,4 +14,5 @@
 2. You can create new heroes in the 'ADD NEW HEROES' option in header navigation.
 3. You can edit heroes by clicking on edit button of every hero.
 4. You can delete heroes by clicking on remove button of every hero.
+5. Going to localhost:[port]/hero-list/word <-- that will show the heroes with hero name like the word you send
 
