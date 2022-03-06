@@ -1,0 +1,45 @@
+<h2 class="hero-title">Add New Hero</h2>
+<form
+    *ngIf="HeroForm"
+    [formGroup]="HeroForm"
+    (submit)="saveHero($event)"
+    class="form"
+>
+    <div class="field-container">
+        <input class="form__input" placeholder="Human Name" formControlName="human_name" appUpperCaseText>
+        <p
+            *ngIf="!HeroForm.get('human_name')?.valid 
+            && HeroForm.get('human_name')?.dirty"
+            class="input-error"
+        >
+            This value is required
+        </p>
+    </div>
+    <div class="field-container">
+        <input class="form__input" placeholder="Hero Name" formControlName="hero_name">
+        <p
+            *ngIf="!HeroForm.get('hero_name')?.valid
+            && HeroForm.get('hero_name')?.dirty
+            && HeroForm.get('hero_name')?.errors?.['required']"
+            class="input-error"
+        >
+            This value is required
+        </p>
+    </div>
+    <div class="field-container">
+        <input class="form__input" placeholder="Image Url" formControlName="image">
+    </div>
+    <div class="field-container">
+        <input type="checkbox" id="featured" class="form__check" placeholder="featured" formControlName="featured">
+
+        <label for="featured">Featured?</label>
+    </div>
+    <div class="field-container">
+        <textarea class="form__input form__textarea" placeholder="History: " formControlName="history"></textarea>
+    </div>
+    <button
+        class="form__button"
+        type="submit"
+        [disabled]="!HeroForm.valid"
+    >{{ hero ? 'Edit' : 'Create' }}</button>
+</form>

@@ -1,0 +1,40 @@
+.hero-title{
+    text-transform: uppercase
+}
+.form{
+    width: 90%;
+    .field-container{
+        width: 100%;
+        .input-error{
+            color: red
+        }
+        .form__input{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border:1px dotted gray;
+            border-radius: 4px;
+        }
+        .form__check{
+            margin-right: 5px;
+            position: relative;
+            top:2px
+        }
+    }
+    .form__button{
+        cursor: pointer;
+        color:white;
+        border:none;
+        border-radius: 4px;
+        padding: 5px 8px;
+        background: var(--main-color);
+        margin-right: 20px;
+        &:hover{
+            background: var(--secondary-color);
+        }
+        &:disabled{
+            background-color: gray;
+            cursor: not-allowed;
+        }
+    }
+}

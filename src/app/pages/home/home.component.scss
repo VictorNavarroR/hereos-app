@@ -1,0 +1,29 @@
+.heroes__title{
+    text-transform: uppercase;
+    padding:0 0 40px 0;
+}
+.featured-heroes{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 40px;
+
+}
+
+@media (max-width: 1400px) {
+    .featured-heroes{
+        grid-template-columns: repeat(3, 1fr);
+    
+    }
+}
+@media (max-width: 768px) {
+    .featured-heroes{
+        grid-template-columns: repeat(2, 1fr);
+    
+    }
+}
+@media (max-width: 550px) {
+    .featured-heroes{
+        grid-template-columns: repeat(1, 1fr);
+    
+    }
+}

@@ -1,0 +1,19 @@
+.hero-content{
+    max-width: 100%;
+    display:flex;
+    gap:20px;
+    &__img{
+        width:40%;
+        height:100%;
+        img{
+            width:100%;
+            height:auto
+        }
+    }
+}
+
+.actions{
+    width:100%;
+    display:flex;
+    justify-content:flex-end;
+}

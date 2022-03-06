@@ -1,0 +1,22 @@
+<div class="search">
+    <h2 class="search__title">Search heroes</h2>
+    <input [(ngModel)]="filterHero" class="search__input" type="text" placeholder="Search for a hero">
+</div>
+
+<h2 class="heroes__title">All heroes</h2>
+<div class="featured-heroes" *ngIf="heroSlice">
+    <app-hero 
+        *ngFor="let hero of (heroSlice | filterHeroes:filterHero)" 
+        [heroObj]="hero"
+        (onDeleteHero)="deleteHeroInParent($event)"
+       >
+    </app-hero>
+</div>
+<mat-paginator class="paginator"
+    [length]="allHeroes.length"
+    [pageSize]="4"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    (page)="OnPageChange($event)"
+    aria-label="Select page">
+</mat-paginator>
+

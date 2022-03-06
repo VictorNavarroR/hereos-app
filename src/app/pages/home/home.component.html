@@ -1,0 +1,10 @@
+<h2 class="heroes__title">Featured heroes</h2>
+<div class="featured-heroes" *ngIf="featuredHeroes">
+    <app-hero 
+        *ngFor="let hero of featuredHeroes" 
+        [heroObj]="hero"
+        (onDeleteHero)="deleteHeroInParent($event)"
+       >
+    </app-hero>
+</div>
+

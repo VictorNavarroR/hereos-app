@@ -1,0 +1,118 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$heroes-app-primary: mat.define-palette(mat.$indigo-palette);
+$heroes-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$heroes-app-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$heroes-app-theme: mat.define-light-theme((
+  color: (
+    primary: $heroes-app-primary,
+    accent: $heroes-app-accent,
+    warn: $heroes-app-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($heroes-app-theme);
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+  }
+
+  html, body {
+    position: relative;
+    height: 100%;
+  }
+
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main {
+    min-height: 91.9vh;
+    max-width: 1333px;
+    align-self: center;
+    padding: 80px 0;
+    margin: 0 auto;
+    margin-bottom: -10vh;
+  }
+  main::after{
+    content:"";
+    display: block;
+  }
+
+  footer, main::after{
+    height: 10vh
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    justify-self: center;
+  }
+
+  input, button, textarea, select {
+    font: inherit;
+  }
+
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  :root {
+    --main-color: rgb(253, 50, 50);
+    --secondary-color: black;
+  }
+
+.actions__hero-btn{
+  cursor: pointer;
+  color:white;
+  border:none;
+  border-radius: 4px;
+  padding: 5px 8px;
+  background: var(--main-color);
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: var(--main-color);
+}
+.paginator{
+  padding:30px 0
+}
+
+@media (max-width: 1400px) {
+  main{
+      padding:0 40px
+  
+  }
+}

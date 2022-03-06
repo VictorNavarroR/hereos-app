@@ -1,0 +1,12 @@
+<header class="header">
+    <div class="header__logo">
+        <a [routerLink]="['/']">
+            <img [src]="heroesLogo" alt="Heroes Logo">
+        </a>
+    </div>
+    <nav class="header__nav">
+        <a [routerLink]="['/']" class="header__navlink">Home</a>
+        <a [routerLink]="['/hero-list']" class="header__navlink">Hero List</a>
+        <a [routerLink]="['/add-hero']" class="header__navlink">Add New Heroes</a>
+    </nav>
+</header>

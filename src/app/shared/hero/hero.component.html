@@ -1,0 +1,10 @@
+<div class="hero">
+    <figure (click)="openModal(heroObj)" class="hero__img">
+    <img [src]="heroObj.image" alt="Hero Image">
+    </figure>
+    <h3 class="hero__title">{{ heroObj.human_name }}( {{ heroObj.hero_name }} )</h3>
+    <div class="hero__btns">
+        <button (click)="editHero(heroObj.id)" class="hero__btn hero__btn--edit">Editar</button>
+        <button mat-button (click)="openDialog(heroObj.id)" class="hero__btn hero__btn--remove">Borrar</button>
+    </div>
+</div>

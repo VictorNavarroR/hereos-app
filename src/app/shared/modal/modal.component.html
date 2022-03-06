@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>{{ data.human_name }}</h1>
+<div mat-dialog-content class="hero-content">
+    <figure class="hero-content__img">
+        <img [src]="data.image" alt="Hero image">
+    </figure>
+    <div class="hero-content__info">
+        <h2>
+            {{data.hero_name}}
+        </h2>
+        <div class="hero-content__infotext">
+            {{data.history}}
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions class="actions">
+  <button mat-button mat-dialog-close="true" class="actions__hero-btn">Close</button>
+</div>
